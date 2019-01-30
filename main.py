@@ -53,11 +53,41 @@ unassistedScorers = sorted(unassistedScorers)
 sortedSubCombos = OrderedDict(sorted(subCombos.items(), key=lambda x: x[1], reverse=True))
 sortedFullCombos = OrderedDict(sorted(fullRosterCombos.items(), key=lambda x: x[1], reverse=True))
 
+# grab all 2+ combos of full roster lines
+smallCombos = defaultdict(int)
+data.sort(key=len)
+count = 0
+for entry in data:
+    line = ", ".join(entry)
+
+    # ignore the sub combinations
+    if "Davis" in line or "Andy" in line or \
+     "Graham" in line or "Jordan L" in line:
+        continue
+
+    if count == 0:
+        smallCombos[line] += 1
+    for key in list(smallCombos):
+        if key in line:
+            smallCombos[key] += 1
+            count += 1
+            break
+        else:
+            smallCombos[line] += 1
+            count += 1
+            break
+
+sortedSmallCombos = OrderedDict(sorted(smallCombos.items(), key=lambda x: x[1], reverse=True))
+
 print("\n\nUnassisted Goal Scorers:")
 print("\n".join(unassistedScorers))
 
 print("\n\nScoring Roster Combos:")
 for key, value in sortedFullCombos.items():
+    print("{:<30}\t{}".format(key, value))
+
+print("\n\nCombos of 2+:")
+for key, value in sortedSmallCombos.items():
     print("{:<30}\t{}".format(key, value))
 
 print("\n\nSub Roster Combos:")
