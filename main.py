@@ -31,8 +31,9 @@ for idx, entry in enumerate(data):
         unassistedScorers.add(entry[0])
         del data[idx]
 
-# find all the line combos that have scored
-scoringCombos = defaultdict(int)
+# find all the line combos that have scored (with subs and without subs)
+subCombos = defaultdict(int)
+fullRosterCombos = defaultdict(int)
 
 for entry in data:
     # remove the secondary assist if it's empty
@@ -41,15 +42,24 @@ for entry in data:
     # sort since we care about who was involved, not what they did
     entry.sort()
     line = ", ".join(entry)
-    scoringCombos[line] += 1
+    if "Davis" in line or "Andy" in line or \
+     "Graham" in line or "Jordan L" in line:
+        subCombos[line] += 1
+    else:
+        fullRosterCombos[line] += 1
 
 unassistedScorers = sorted(unassistedScorers)
 # sort combos by most goals scored
-sortedCombos = OrderedDict(sorted(scoringCombos.items(), key=lambda x: x[1], reverse=True))
+sortedSubCombos = OrderedDict(sorted(subCombos.items(), key=lambda x: x[1], reverse=True))
+sortedFullCombos = OrderedDict(sorted(fullRosterCombos.items(), key=lambda x: x[1], reverse=True))
 
 print("\n\nUnassisted Goal Scorers:")
 print("\n".join(unassistedScorers))
 
-print("\n\nScoring Combos:")
-for key, value in sortedCombos.items():
+print("\n\nScoring Roster Combos:")
+for key, value in sortedFullCombos.items():
+    print("{:<30}\t{}".format(key, value))
+
+print("\n\nSub Roster Combos:")
+for key, value in sortedSubCombos.items():
     print("{:<30}\t{}".format(key, value))
