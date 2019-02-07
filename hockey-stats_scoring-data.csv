@@ -8,12 +8,12 @@ Date,Goal Scorer,Primary Assist,Secondary Assist
 09/22/2018,Marc,Evan,Darwin
 ,Evan,,
 09/28/2018,Andy,Barrett,
-,Graham,Andy,Evan
+,Graham B,Andy,Evan
 ,Evan,Shawn,Graham
 10/6/2018,,,
 10/8/2018,,,
 10/13/2018,Jordan,Paul,
-,Paul,Shawn,Craig
+,Paul,Shawn,Crag
 ,Jordan,Craig,Heather
 ,Darwin,Paul,Marc
 10/24/2018,Jordan,Paul,Steph
@@ -42,11 +42,11 @@ Date,Goal Scorer,Primary Assist,Secondary Assist
 12/11/2018,Shawn,Mark,
 ,Shawn,Paul,Steph
 12/17/2018,Steph,,
-,Colin,Barrett,Craig
+,Colin,Barret,Craig
 12/22/2018,Chris,Colin,Heather
 ,Paul,Shawn,Marc
 ,Shawn,Colin,
-12/29/2018,Evan,Barrett,Marc
+12/29/2018,Evan,Barret,Marc
 ,Marc,Jordan,Evan
 ,Paul,Chris,
 ,Paul,,
@@ -66,4 +66,6 @@ Date,Goal Scorer,Primary Assist,Secondary Assist
 1/29/2019,Steph,Colin,Evan
 ,Colin,Evan,Steph
 ,Colin,Evan,Steph
-Totals,58,52,32
+2/2/2019,Steph,Evan,
+,Evan,Steph,
+Totals,60,54,32

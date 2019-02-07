@@ -1,0 +1,175 @@
+
+
+Primary Assist Totals:
+Colin                         	8	(17.78%)
+Jordan                        	6	(13.33%)
+Evan                          	6	(13.33%)
+Paul                          	5	(11.11%)
+Shawn                         	5	(11.11%)
+Marc                          	3	(6.67%)
+Steph                         	3	(6.67%)
+Chris                         	3	(6.67%)
+Mark                          	2	(4.44%)
+Barret                        	2	(4.44%)
+Craig                         	1	(2.22%)
+Barrett                       	1	(2.22%)
+
+
+Unassisted Goal Scorers:
+Evan
+Jordan
+Paul
+Steph
+
+
+Unique Rostered Combos:
+Colin, Evan, Steph            	3
+Jordan, Paul, Steph           	2
+Colin, Shawn                  	2
+Colin, Jordan, Steph          	2
+Evan, Steph                   	2
+Jordan, Steph                 	1
+Chris, Marc, Paul             	1
+Jordan, Marc                  	1
+Evan, Paul                    	1
+Barrett, Marc, Steph          	1
+Colin, Evan                   	1
+Darwin, Evan, Marc            	1
+Jordan, Paul                  	1
+Crag, Paul, Shawn             	1
+Craig, Heather, Jordan        	1
+Darwin, Marc, Paul            	1
+Barrett, Darwin, Paul         	1
+Evan, Jordan                  	1
+Jordan, Marc, Steph           	1
+Barrett, Evan, Steph          	1
+Colin, Craig, Steph           	1
+Colin, Paul                   	1
+Craig, Marc, Shawn            	1
+Mark, Steph                   	1
+Mark, Shawn                   	1
+Paul, Shawn, Steph            	1
+Barret, Colin, Craig          	1
+Chris, Colin, Heather         	1
+Marc, Paul, Shawn             	1
+Barret, Evan, Marc            	1
+Evan, Jordan, Marc            	1
+Chris, Paul                   	1
+Chris, Colin, Evan            	1
+Paul, Steph                   	1
+Jordan, Shawn                 	1
+Colin, Marc                   	1
+Chris, Shawn                  	1
+Barrett, Chris, Jordan        	1
+Colin, Jordan, Paul           	1
+
+
+Combos of 2+:
+Jordan, Steph                 	7
+Evan, Steph                   	6
+Colin, Steph                  	6
+Colin, Evan                   	5
+Jordan, Paul                  	4
+Paul, Steph                   	4
+Jordan, Marc                  	3
+Marc, Paul                    	3
+Evan, Marc                    	3
+Paul, Shawn                   	3
+Colin, Jordan                 	3
+Evan, Jordan                  	2
+Colin, Shawn                  	2
+Colin, Paul                   	2
+Chris, Paul                   	2
+Barrett, Marc                 	2
+Barrett, Steph                	2
+Marc, Steph                   	2
+Darwin, Marc                  	2
+Darwin, Paul                  	2
+Barrett, Evan                 	2
+Colin, Craig                  	2
+Marc, Shawn                   	2
+Chris, Colin                  	2
+Evan, Paul                    	1
+Mark, Steph                   	1
+Mark, Shawn                   	1
+Jordan, Shawn                 	1
+Colin, Marc                   	1
+Chris, Shawn                  	1
+Chris, Marc                   	1
+Darwin, Evan                  	1
+Crag, Paul                    	1
+Crag, Shawn                   	1
+Craig, Heather                	1
+Craig, Jordan                 	1
+Heather, Jordan               	1
+Barrett, Darwin               	1
+Barrett, Paul                 	1
+Craig, Steph                  	1
+Craig, Marc                   	1
+Craig, Shawn                  	1
+Shawn, Steph                  	1
+Barret, Colin                 	1
+Barret, Craig                 	1
+Barrett, Colin                	1
+Barrett, Craig                	1
+Chris, Heather                	1
+Colin, Heather                	1
+Barret, Evan                  	1
+Barret, Marc                  	1
+Chris, Evan                   	1
+Barrett, Chris                	1
+Barrett, Jordan               	1
+Chris, Jordan                 	1
+
+
+Non-Scoring combinations:
+Barret, Barrett
+Barret, Chris
+Barret, Crag
+Barret, Darwin
+Barret, Heather
+Barret, Jordan
+Barret, Mark
+Barret, Paul
+Barret, Shawn
+Barret, Steph
+Barrett, Crag
+Barrett, Heather
+Barrett, Mark
+Barrett, Shawn
+Chris, Crag
+Chris, Craig
+Chris, Darwin
+Chris, Mark
+Chris, Steph
+Colin, Crag
+Colin, Darwin
+Colin, Mark
+Crag, Craig
+Crag, Darwin
+Crag, Evan
+Crag, Heather
+Crag, Jordan
+Crag, Marc
+Crag, Mark
+Crag, Steph
+Craig, Darwin
+Craig, Evan
+Craig, Mark
+Craig, Paul
+Darwin, Heather
+Darwin, Jordan
+Darwin, Mark
+Darwin, Shawn
+Darwin, Steph
+Evan, Heather
+Evan, Mark
+Evan, Shawn
+Heather, Marc
+Heather, Mark
+Heather, Paul
+Heather, Shawn
+Heather, Steph
+Jordan, Mark
+Marc, Mark
+Mark, Paul

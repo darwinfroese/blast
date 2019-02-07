@@ -14,6 +14,24 @@ def count_in_line(list, line):
 
     return count
 
+def filter_out_data(list):
+    if list[0] == '':
+        return False
+    elif list[0] and list[0] in subs:
+        return False
+    elif list[1] and list[1] in subs:
+        return False
+    elif list[2] and list[2] in subs:
+        return False
+
+    return True
+
+def check_unassisted(list):
+    if list[1] == '':
+        return True
+
+    return False
+
 #######################################
 # Procedural Logic
 #######################################
@@ -32,14 +50,13 @@ del data[-1]
 
 for entry in data:
     # strip date
-    del entry[0]
+    entry.pop(0)
 
-# remove all the entries that aren't goals
-for idx, entry in enumerate(data):
-    if entry[0] == '':
-        del data[idx]
+# remove all the entries that aren't goals and all entries
+# that involve a sub
 
-cleanedData = data
+cleanedData = [e for e in data if filter_out_data(e)]
+
 players = set()
 for cd in cleanedData:
     for player in cd:
@@ -48,29 +65,35 @@ for cd in cleanedData:
 players = sorted(players)
 
 # find all the goals that were scored unassisted and remove them from the data
-unassistedScorers = set()
+unassistedEntries = [e for e in cleanedData if check_unassisted(e)]
+cleanedData = [e for e in cleanedData if not check_unassisted(e)]
 
-for idx, entry in enumerate(data):
-    if entry[1] == '' and entry[0] not in unassistedScorers:
-        unassistedScorers.add(entry[0])
-        del data[idx]
+unassistedScorers = set()
+for entry in unassistedEntries:
+    unassistedScorers.add(entry[0])
+
+# find all primary assists
+primaryAssistCount = 0
+primaryAssists = defaultdict(int)
+for entry in cleanedData:
+    player = entry[1]
+    primaryAssists[player] += 1
+    primaryAssistCount += 1
+
+primaryAssists = OrderedDict(sorted(primaryAssists.items(), key=lambda x: x[1], reverse=True))
 
 # find all the line combos that have scored (with subs and without subs)
 subCombos = defaultdict(int)
 fullRosterCombos = defaultdict(int)
 
-for entry in data:
+for entry in cleanedData:
     # remove the secondary assist if it's empty
     if entry[2] == '':
         del entry[2]
     # sort since we care about who was involved, not what they did
     entry.sort()
     line = ", ".join(entry)
-    if subs[0] in line or subs[1] in line or \
-     subs[2] in line or subs[3] in line:
-        subCombos[line] += 1
-    else:
-        fullRosterCombos[line] += 1
+    fullRosterCombos[line] += 1
 
 unassistedScorers = sorted(unassistedScorers)
 # sort combos by most goals scored
@@ -85,16 +108,11 @@ for combo in playerCombos:
 
 # grab all 2+ combos of full roster lines
 smallCombos = defaultdict(int)
-data.sort(key=len)
+cleanedData.sort(key=len)
 count = 0
-for entry in data:
+for entry in cleanedData:
     inserted = False
     line = ", ".join(entry)
-
-    # ignore the sub combinations
-    if subs[0] in line or subs[1] in line or \
-     subs[2] in line or subs[3] in line:
-        continue
 
     if count == 0:
         smallCombos[line] += 1
@@ -106,14 +124,6 @@ for entry in data:
             smallCombos[line] += 1
             count += 1
             inserted = True
-
-    # for key in list(smallCombos):
-    #     num_in_line = count_in_line(entry, key)
-    #     if num_in_line > 1:
-    #         smallCombos[key] += 1
-    #         count += 1
-    #         inserted = True
-    #         break
 
     if not inserted:
         smallCombos[line] += 1
@@ -132,6 +142,11 @@ for key in list(smallCombos):
 # for pc in playerCombos:
 #     print(", ".join(pc))
 
+print("\n\nPrimary Assist Totals:")
+for key, value in primaryAssists.items():
+    percent = (value / primaryAssistCount) * 100
+    print("{:<30}\t{}\t({:.2f}%)".format(key,value,percent))
+
 print("\n\nUnassisted Goal Scorers:")
 print("\n".join(unassistedScorers))
 
@@ -141,10 +156,6 @@ for key, value in sortedFullCombos.items():
 
 print("\n\nCombos of 2+:")
 for key, value in sortedSmallCombos.items():
-    print("{:<30}\t{}".format(key, value))
-
-print("\n\nSub Roster Combos:")
-for key, value in sortedSubCombos.items():
     print("{:<30}\t{}".format(key, value))
 
 print("\n\nNon-Scoring combinations:")
